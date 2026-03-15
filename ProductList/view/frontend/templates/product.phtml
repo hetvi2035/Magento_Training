@@ -1,0 +1,25 @@
+<?php
+$products = $block->getProducts();
+?>
+
+<h2>Product List</h2>
+
+<?php foreach ($products as $product): ?>
+
+<div>
+
+<p><b>Name:</b> <?= $product->getName(); ?></p>
+
+<p><b>SKU:</b> <?= $product->getSku(); ?></p>
+
+<p><b>Price:</b> ₹<?= $product->getPrice(); ?></p>
+
+<p>
+<img src="<?= $block->getBaseUrl().'media/catalog/product'.$product->getImage(); ?>" width="150">
+</p>
+
+<hr>
+
+</div>
+
+<?php endforeach; ?>
